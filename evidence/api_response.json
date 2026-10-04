@@ -1,0 +1,128 @@
+{
+    "score": 71,
+    "classification": "STRONG",
+    "findings": [
+        {
+            "type": "dictionary_word",
+            "severity": "medium",
+            "title": "Dictionary word detected",
+            "description": "Password contains common dictionary word(s).",
+            "detail": "Contains the common word(s) 'demo'. Dictionary words make passwords predictable.",
+            "word_count": 1
+        },
+        {
+            "type": "numeric_run",
+            "severity": "low",
+            "title": "Long numeric run detected",
+            "description": "Password contains a long run of digits.",
+            "detail": "The digit run '7788' resembles a PIN, phone or date fragment."
+        }
+    ],
+    "suggestions": [
+        "Avoid common dictionary words; combine unrelated words in a passphrase instead.",
+        "Avoid long runs of digits such as PIN- or phone-like fragments.",
+        "Avoid reusing passwords across different accounts.",
+        "Use a password manager to generate and store unique passwords.",
+        "Enable MFA (multi-factor authentication) wherever it is available."
+    ],
+    "metrics": {
+        "length": {
+            "length": 23,
+            "band": "Strong length contribution",
+            "meets_recommended_minimum_12": true,
+            "meets_strong_threshold_16": true,
+            "note": "Length alone does not make a password secure."
+        },
+        "characters": {
+            "length": 23,
+            "lowercase": 13,
+            "uppercase": 3,
+            "digits": 4,
+            "symbols": 3,
+            "spaces": 0,
+            "has_lowercase": true,
+            "has_uppercase": true,
+            "has_digits": true,
+            "has_symbols": true,
+            "character_type_count": 4,
+            "unique_character_count": 17,
+            "unique_character_ratio": 0.739
+        },
+        "entropy": {
+            "length": 23,
+            "pool_size": 95,
+            "entropy_bits": 151.1,
+            "formula": "Entropy ~= L x log2(N)",
+            "limitation": "Theoretical estimate only. It assumes random character selection; human-made passwords are usually far more predictable than this number suggests."
+        },
+        "passphrase_style_detected": false,
+        "guess_resistance": "millennia upon millennia (educational estimate only)",
+        "score_breakdown": {
+            "contributions": {
+                "length": 35,
+                "character_diversity": 15,
+                "unique_character_ratio": 7,
+                "pattern_resistance": 20,
+                "non_common_password": 0,
+                "unpredictability": 10
+            },
+            "penalties": {
+                "numeric_run": 4,
+                "dictionary_word": 12
+            },
+            "total_penalty": 16,
+            "breach_cap_applied": false
+        }
+    },
+    "breach_check": {
+        "checked": true,
+        "found": false,
+        "corpus_size": 10,
+        "demo": true,
+        "note": "EDUCATIONAL DEMO ONLY: compared against a tiny local set of synthetic hashes. No password was sent to any external service. Production systems should use a k-anonymity breach-check API."
+    },
+    "policy": {
+        "policy_result": "POLICY PASS",
+        "passed": true,
+        "policy": {
+            "minimum_length": 12,
+            "maximum_length": 128,
+            "common_password_check": true,
+            "personal_info_check": true,
+            "allow_spaces": true
+        },
+        "rules": [
+            {
+                "rule": "Minimum length 12",
+                "passed": true,
+                "detail": "Length is 23 (minimum 12)."
+            },
+            {
+                "rule": "Maximum supported length 128",
+                "passed": true,
+                "detail": "Length is 23 (maximum supported 128)."
+            },
+            {
+                "rule": "Common passwords rejected",
+                "passed": true,
+                "detail": "Password is not a known common password."
+            },
+            {
+                "rule": "Personal information rejected",
+                "passed": true,
+                "detail": "No provided personal info detected in the password."
+            },
+            {
+                "rule": "Spaces allowed",
+                "passed": true,
+                "detail": "Policy permits spaces (passphrase friendly)."
+            }
+        ],
+        "note": "Policy compliance (PASS/FAIL) is shown separately from the strength score: they are different concepts."
+    },
+    "disclaimer": "Strength score and classification are project-defined, educational estimates \u2014 not universal security standards. Password strength cannot be perfectly determined by one formula.",
+    "meta": {
+        "privacy": "Password was processed in memory only. It was not logged, not stored, and is not included in this response.",
+        "analytics_recorded": true
+    }
+}

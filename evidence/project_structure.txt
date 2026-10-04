@@ -1,0 +1,125 @@
+Password-Strength-Analyzer/
+├── .env.example
+├── .gitignore
+├── README.md
+├── backend/
+│   ├── __init__.py
+│   ├── app.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   └── schemas.py
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   ├── analyze_routes.py
+│   │   ├── dashboard_routes.py
+│   │   └── generator_routes.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── analytics_service.py
+│   │   ├── breach_checker.py
+│   │   ├── character_analyzer.py
+│   │   ├── common_checker.py
+│   │   ├── context_checker.py
+│   │   ├── entropy_estimator.py
+│   │   ├── hashing_demo.py
+│   │   ├── length_analyzer.py
+│   │   ├── password_analyzer.py
+│   │   ├── password_generator.py
+│   │   ├── pattern_detector.py
+│   │   ├── policy_checker.py
+│   │   ├── scoring_engine.py
+│   │   └── suggestion_engine.py
+│   └── utils/
+│       ├── __init__.py
+│       ├── config.py
+│       └── safety.py
+├── data/
+│   ├── README.md
+│   ├── breached_sha1.txt
+│   ├── common_passwords.txt
+│   └── dictionary_words.txt
+├── docs/
+│   ├── API.md
+│   ├── ARCHITECTURE.md
+│   ├── DEPLOYMENT_WINDOWS.md
+│   ├── GITHUB_GUIDE.md
+│   ├── INTERVIEW_PREP.md
+│   ├── LINKEDIN_RESUME.md
+│   ├── PRIVACY.md
+│   ├── SECURITY_TESTING.md
+│   └── TESTING.md
+├── evidence/
+│   ├── api_response.json
+│   ├── project_structure.txt
+│   ├── schema_proof.txt
+│   ├── security_tests.txt
+│   └── unit_tests.txt
+├── frontend/
+│   ├── index.html
+│   ├── package.json
+│   ├── public/
+│   │   └── shield.svg
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── api.js
+│   │   ├── components/
+│   │   │   ├── AnalyzerPage.jsx
+│   │   │   ├── DashboardPage.jsx
+│   │   │   ├── FindingsList.jsx
+│   │   │   ├── GeneratorPage.jsx
+│   │   │   ├── LearnPage.jsx
+│   │   │   └── StrengthMeter.jsx
+│   │   ├── main.jsx
+│   │   └── styles.css
+│   └── vite.config.js
+├── reports/
+│   └── project_report.md
+├── requirements.txt
+├── screenshots/
+│   ├── 01_project_structure.png
+│   ├── 02_architecture.png
+│   ├── 03_analyzer_homepage.png
+│   ├── 04_hidden_password.png
+│   ├── 05_very_weak_result.png
+│   ├── 06_weak_result.png
+│   ├── 07_moderate_result.png
+│   ├── 08_strong_result.png
+│   ├── 09_very_strong_result.png
+│   ├── 10_length_analysis.png
+│   ├── 11_sequence_detection.png
+│   ├── 12_keyboard_pattern_detection.png
+│   ├── 13_repetition_detection.png
+│   ├── 14_common_password_warning.png
+│   ├── 15_security_recommendations.png
+│   ├── 16_entropy_explanation.png
+│   ├── 17_password_generator.png
+│   ├── 18_policy_checker.png
+│   ├── 19_analytics_dashboard.png
+│   ├── 20_strength_distribution.png
+│   ├── 21_weakness_chart.png
+│   ├── 22_unit_tests.png
+│   ├── 23_privacy_security_tests.png
+│   ├── 24_api_response.png
+│   ├── 25_database_schema_no_password.png
+│   ├── 28_readme_preview.png
+│   └── README.md
+├── scripts/
+│   ├── generate_evidence.bat
+│   ├── generate_screenshots.py
+│   ├── generate_terminal_evidence.py
+│   ├── hashing_demo.py
+│   ├── run_tests.bat
+│   ├── run_tests.sh
+│   ├── seed_demo_data.py
+│   ├── setup_linux.sh
+│   ├── setup_windows.bat
+│   ├── start_backend.bat
+│   ├── start_backend.sh
+│   ├── start_frontend.bat
+│   └── tree_snapshot.py
+└── tests/
+    ├── __init__.py
+    ├── test_api.py
+    ├── test_password_analyzer.py
+    └── test_security_privacy.py

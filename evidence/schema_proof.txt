@@ -1,0 +1,45 @@
+$ sqlite3 backend/analytics.db .schema
+
+CREATE TABLE ANALYSES (
+    analysis_id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    score                  INTEGER NOT NULL,
+    classification         TEXT    NOT NULL,
+    password_length        INTEGER NOT NULL,
+    unique_character_ratio REAL    NOT NULL,
+    weakness_count         INTEGER NOT NULL,
+    created_at             TEXT    NOT NULL
+);
+
+CREATE TABLE FINDINGS (
+    finding_id   INTEGER PRIMARY KEY AUTOINCREMENT,
+    analysis_id  INTEGER NOT NULL REFERENCES ANALYSES(analysis_id),
+    finding_type TEXT    NOT NULL,
+    severity     TEXT    NOT NULL,
+    description  TEXT    NOT NULL
+);
+
+CREATE INDEX idx_analyses_class ON ANALYSES(classification);
+
+CREATE INDEX idx_findings_type ON FINDINGS(finding_type);
+
+CREATE TABLE sqlite_sequence(name,seq);
+
+PRAGMA table_info(ANALYSES);
+cid  name                     type       notnull
+0    analysis_id              INTEGER    0
+1    score                    INTEGER    1
+2    classification           TEXT       1
+3    password_length          INTEGER    1
+4    unique_character_ratio   REAL       1
+5    weakness_count           INTEGER    1
+6    created_at               TEXT       1
+
+PRAGMA table_info(FINDINGS);
+cid  name                     type       notnull
+0    finding_id               INTEGER    0
+1    analysis_id              INTEGER    1
+2    finding_type             TEXT       1
+3    severity                 TEXT       1
+4    description              TEXT       1
+
+>>> No 'password', 'password_hash', 'credential' or secret column exists.

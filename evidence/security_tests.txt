@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.14, pytest-9.0.3, pluggy-1.6.0 -- /usr/local/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/user/Password-Strength-Analyzer
+plugins: anyio-4.14.2
+collecting ... collected 11 items
+
+tests/test_security_privacy.py::test_password_not_in_api_response PASSED [  9%]
+tests/test_security_privacy.py::test_password_not_in_logs PASSED         [ 18%]
+tests/test_security_privacy.py::test_password_not_in_database PASSED     [ 27%]
+tests/test_security_privacy.py::test_schema_has_no_password_column PASSED [ 36%]
+tests/test_security_privacy.py::test_validation_error_does_not_echo_password PASSED [ 45%]
+tests/test_security_privacy.py::test_wrong_type_rejected_without_echo PASSED [ 54%]
+tests/test_security_privacy.py::test_password_not_accepted_via_url PASSED [ 63%]
+tests/test_security_privacy.py::test_password_input_is_password_type PASSED [ 72%]
+tests/test_security_privacy.py::test_frontend_does_not_persist_password PASSED [ 81%]
+tests/test_security_privacy.py::test_analytics_rows_are_metadata_only PASSED [ 90%]
+tests/test_security_privacy.py::test_rate_limiting_returns_429 PASSED    [100%]
+
+============================== 11 passed in 1.94s ==============================
